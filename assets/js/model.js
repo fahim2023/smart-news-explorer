@@ -8,7 +8,7 @@ the dom event listener will trigger as soon as dom is loaded
 */
 export async function fetchLatestArticles() {
   try {
-    const url = `${BASE_URL}?page-size=${PAGE_SIZE}&show-fields=thumbnail,trailText,headline&api-key=${API_KEY}`;
+    const url = `${BASE_URL}?page-size=${PAGE_SIZE}&order-by=newest&show-fields=thumbnail,trailText,headline&api-key=${API_KEY}`;
     const response = await fetch(url);
 
     if (!response.ok) {
