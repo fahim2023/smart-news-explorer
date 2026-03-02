@@ -1,0 +1,7 @@
+.hero-section {
+  background: linear-gradient(135deg, #2f56c0, #1d3f9f);
+}
+
+.hero-section .card {
+  border-radius: 15px;
+}
