@@ -6,7 +6,7 @@ const PAGE_SIZE = 12;
 the dom event listener will trigger as soon as dom is loaded
  and fetch latest articles on all sections
 */
-async function fetchLatestArticles() {
+export async function fetchLatestArticles() {
   try {
     const url = `${BASE_URL}?page-size=${PAGE_SIZE}&show-fields=thumbnail,trailText,headline&api-key=${API_KEY}`;
     const response = await fetch(url);
@@ -23,4 +23,3 @@ async function fetchLatestArticles() {
     console.error("Error fetching articles:", error);
   }
 }
-export { fetchLatestArticles };
