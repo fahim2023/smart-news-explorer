@@ -15,7 +15,13 @@ export async function getAllSections() {
     throw new Error(`Sections request failed: ${response.status}`);
 
   const data = await response.json();
-  return data.response.results;
+  console.log(data);
+  return {
+    results: data.response.results,
+    currentPage: data.response.currentPage,
+    pages: data.response.pages,
+    total: data.response.total,
+  };
 }
 
 export async function fetchLatestArticles(state) {
