@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const loadMoreBtn = document.getElementById("loadMoreBtn");
   const fromDateInput = document.getElementById("fromDate");
   const toDateInput = document.getElementById("toDate");
+  const sortSelect = document.getElementById("sortSelect");
   try {
     const sections = await model.getAllSections();
     DefaultView.populateSections(sections);
@@ -62,17 +63,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   fromDateInput.addEventListener("change", () => {
-    state.fromDate = fromDateInput.value; // "YYYY-MM-DD"
+    state.fromDate = fromDateInput.value;
     state.page = 1;
     loadArticles();
   });
 
   toDateInput.addEventListener("change", () => {
-    state.toDate = toDateInput.value; // "YYYY-MM-DD"
+    state.toDate = toDateInput.value;
     state.page = 1;
     loadArticles();
   });
 
+  sortSelect.addEventListener("change", () => {
+    state.sort = sortSelect.value;
+    state.page = 1;
+    state.results = [];
+    loadArticles();
+  });
   loadMoreBtn.addEventListener("click", () => {
     state.page += 1;
     loadArticles();
