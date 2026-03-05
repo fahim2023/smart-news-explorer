@@ -9,6 +9,8 @@ the dom event listener will trigger as soon as dom is loaded
 export async function fetchLatestArticles(state) {
   const params = new URLSearchParams();
   if (state.query) params.append("q", state.query);
+  params.append("query-fields", "headline,trailText");
+
   if (state.section && state.section !== "all")
     params.append("section", state.section);
   if (state.fromDate) params.append("from-date", state.fromDate);
@@ -18,7 +20,7 @@ export async function fetchLatestArticles(state) {
   params.append("page", state.page);
   params.append("page-size", state.pageSize);
   params.append("api-key", API_KEY);
-  params.append("show-fields", "trailText,headline,thumbnail");
+  params.append("show-fields", "trailText,thumbnail");
 
   try {
     const url = `${BASE_URL}?${params.toString()}`;
