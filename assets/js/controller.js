@@ -20,6 +20,14 @@ async function loadArticles() {
 }
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionSelect = document.getElementById("sectionSelect");
+  const searchForm = document.getElementById("searchForm");
+  const searchBtn = document.getElementById("searchBtn");
+  searchForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    state.query = searchInput.value.trim();
+    state.page = 1;
+    await loadArticles();
+  });
 
   sectionSelect.addEventListener("change", async (event) => {
     state.section = event.target.value;
