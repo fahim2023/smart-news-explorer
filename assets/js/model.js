@@ -16,12 +16,7 @@ export async function getAllSections() {
 
   const data = await response.json();
   console.log(data);
-  return {
-    results: data.response.results,
-    currentPage: data.response.currentPage,
-    pages: data.response.pages,
-    total: data.response.total,
-  };
+  return data.response.results;
 }
 
 export async function fetchLatestArticles(state) {
@@ -51,7 +46,12 @@ export async function fetchLatestArticles(state) {
     const data = await response.json();
     console.log("fetching", url);
     // renderArticles();
-    return data.response.results;
+    return {
+      results: data.response.results,
+      currentPage: data.response.currentPage,
+      pages: data.response.pages,
+      total: data.response.total,
+    };
   } catch (error) {
     console.error("Error fetching articles:", error);
   }

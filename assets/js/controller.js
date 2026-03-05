@@ -8,21 +8,35 @@ const state = {
   sort: "newest",
   page: 1,
   pageSize: 12,
+  totalPages: 0,
   total: 0,
   results: [],
 };
 async function loadArticles() {
   try {
-    const articles = await model.fetchLatestArticles(state);
-    state.results = articles;
-    DefaultView.renderArticles(state.results);
-  } catch {}
+    const data = await model.fetchLatestArticles(state);
+    state.total = data.total;
+    state.totalPages = data.pages;
+    state.currentPage = data.currentPage;
+
+    if (state.page === 1) {
+      state.results = data.results;
+      DefaultView.renderArticles(state.results);
+    } else {
+      state.results = state.results.concat(data.results);
+      DefaultView.appendArticles(data.results);
+    }
+  } catch (error) {
+    DefaultView.showError("Failed to load articles.");
+    console.error(error);
+  }
 }
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionSelect = document.getElementById("sectionSelect");
   const searchForm = document.getElementById("searchForm");
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
   try {
     const sections = await model.getAllSections();
     DefaultView.populateSections(sections);
@@ -41,9 +55,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   sectionSelect.addEventListener("change", async (event) => {
     state.section = event.target.value;
     state.page = 1;
-    console.log("Selected section:", state.section);
-
     await loadArticles();
   });
-  await loadArticles();
+
+  loadMoreBtn.addEventListener("click", () => {
+    state.page += 1;
+    loadArticles();
+  });
 });
