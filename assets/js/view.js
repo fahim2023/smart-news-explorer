@@ -1,6 +1,7 @@
 class DefaultView {
   constructor() {
     this.container = document.getElementById("results");
+    this.sections = document.getElementById("sectionSelect");
   }
   renderArticles(articles) {
     this.container.innerHTML = "";
@@ -55,6 +56,20 @@ class DefaultView {
               `;
 
       this.container.appendChild(col);
+    });
+  }
+  populateSections(sections) {
+    const allOptions = this.sections.querySelectorAll("option");
+    allOptions.forEach((option) => {
+      if (option.value !== "all") {
+        option.remove();
+      }
+    });
+    sections.forEach((section) => {
+      const option = document.createElement("option");
+      option.value = section.id;
+      option.textContent = section.webTitle;
+      this.sections.appendChild(option);
     });
   }
 }

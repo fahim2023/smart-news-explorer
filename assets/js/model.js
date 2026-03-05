@@ -1,11 +1,23 @@
 const API_KEY = `3ed52fe5-f7cc-4d73-b9df-39d8cbff51f8`;
 const BASE_URL = `https://content.guardianapis.com/search`;
+const SECTIONS_URL = `https://content.guardianapis.com/sections`;
 const PAGE_SIZE = 12;
 
 /*
 the dom event listener will trigger as soon as dom is loaded
  and fetch latest articles on all sections
 */
+export async function getAllSections() {
+  const url = `${SECTIONS_URL}?api-key=${API_KEY}`;
+  const response = await fetch(url);
+
+  if (!response.ok)
+    throw new Error(`Sections request failed: ${response.status}`);
+
+  const data = await response.json();
+  return data.response.results;
+}
+
 export async function fetchLatestArticles(state) {
   const params = new URLSearchParams();
   if (state.query) params.append("q", state.query);

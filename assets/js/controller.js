@@ -21,7 +21,16 @@ async function loadArticles() {
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionSelect = document.getElementById("sectionSelect");
   const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
+  try {
+    const sections = await model.getAllSections();
+    DefaultView.populateSections(sections);
+
+    await loadArticles();
+  } catch (err) {
+    console.error(err);
+  }
   searchForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     state.query = searchInput.value.trim();
