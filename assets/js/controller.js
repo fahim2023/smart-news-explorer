@@ -18,6 +18,7 @@ async function loadArticles() {
     state.total = data.total;
     state.totalPages = data.pages;
     state.currentPage = data.currentPage;
+    DefaultView.updateLoadMoreBtn(state.currentPage, state.totalPages);
 
     if (state.page === 1) {
       state.results = data.results;

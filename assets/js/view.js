@@ -72,6 +72,15 @@ class DefaultView {
       this.container.appendChild(col);
     });
   }
+  updateLoadMoreBtn(currentPage, totalPages) {
+    const btn = document.getElementById("loadMoreBtn");
+
+    if (currentPage >= totalPages) {
+      btn.style.display = "none";
+    } else {
+      btn.style.display = "";
+    }
+  }
   appendArticles(articles) {
     articles.forEach((article) => {
       const col = document.createElement("div");
