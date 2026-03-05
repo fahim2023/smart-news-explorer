@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const fromDateInput = document.getElementById("fromDate");
+  const toDateInput = document.getElementById("toDate");
   try {
     const sections = await model.getAllSections();
     DefaultView.populateSections(sections);
@@ -57,6 +59,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     state.section = event.target.value;
     state.page = 1;
     await loadArticles();
+  });
+
+  fromDateInput.addEventListener("change", () => {
+    state.fromDate = fromDateInput.value; // "YYYY-MM-DD"
+    state.page = 1;
+    loadArticles();
+  });
+
+  toDateInput.addEventListener("change", () => {
+    state.toDate = toDateInput.value; // "YYYY-MM-DD"
+    state.page = 1;
+    loadArticles();
   });
 
   loadMoreBtn.addEventListener("click", () => {
