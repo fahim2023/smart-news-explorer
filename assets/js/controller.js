@@ -20,6 +20,7 @@ async function loadArticles() {
 }
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionSelect = document.getElementById("sectionSelect");
+  const form = document.getElementById("");
 
   sectionSelect.addEventListener("change", async (event) => {
     state.section = event.target.value;
