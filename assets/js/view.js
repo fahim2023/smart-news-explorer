@@ -25,8 +25,12 @@ class DefaultView {
       col.className = "col-lg-4 col-md-6";
 
       col.innerHTML = `
-          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-          
+         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
+
+        <button class="bookmark-btn btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle"
+          data-url="${article.webUrl}">
+          <i class="bi bi-bookmark"></i>
+        </button>
           <!-- Image -->
           ${
             article.fields?.thumbnail ?
@@ -87,8 +91,12 @@ class DefaultView {
       col.className = "col-lg-4 col-md-6";
 
       col.innerHTML = `
-          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-          
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
+
+        <button class="bookmark-btn btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle"
+          data-url="${article.webUrl}">
+          <i class="bi bi-bookmark"></i>
+        </button>          
           <!-- Image -->
           ${
             article.fields?.thumbnail ?
