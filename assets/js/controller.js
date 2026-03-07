@@ -84,4 +84,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     state.page += 1;
     loadArticles();
   });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".bookmark-btn")) {
+      const btn = event.target.closest(".bookmark-btn");
+      const article = state.results.find((a) => a.webUrl === btn.dataset.url);
+
+      const bookmarks = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      console.log(bookmarks);
+      const index = bookmarks.findIndex(
+        (bookmark) => bookmark.webUrl === article.url,
+      );
+      if (index === -1) {
+        bookmarks.push(article);
+      } else {
+        bookmarks.splice(index, 1);
+      }
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    }
+  });
 });

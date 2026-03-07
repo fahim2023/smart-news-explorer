@@ -15,7 +15,6 @@ export async function getAllSections() {
     throw new Error(`Sections request failed: ${response.status}`);
 
   const data = await response.json();
-  console.log(data);
   return data.response.results;
 }
 
