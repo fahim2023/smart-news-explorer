@@ -142,5 +142,74 @@ class DefaultView {
       this.container.appendChild(col);
     });
   }
+
+  renderBookmarks(bookmarks) {
+    const container = document.getElementById("bookmarksResults");
+
+    const emptyState = (document.getElementById("emptyState").innerHTML =
+      `<h4>No bookmarks yet</h4>
+          <p>Go back to the homepage and save articles.</p>
+          <a href="index.html" class="btn btn-outline-primary">
+            Explore News
+          </a>`);
+
+    if (bookmarks.length === 0) {
+      container.innerHTML = emptyState;
+    }
+    bookmarks.forEach((article) => {
+      const card = document.createElement("div");
+
+      card.className = "card mb-3 shadow-sm border-0";
+
+      card.innerHTML = `
+    
+    <div class="card-body d-flex align-items-center">
+
+      <!-- Thumbnail -->
+      <img
+        src="${article.fields?.thumbnail || ""}"
+        class="rounded me-3"
+        style="width:80px;height:80px;object-fit:cover;"
+      >
+
+      <!-- Content -->
+      <div class="flex-grow-1">
+
+        <span class="badge bg-primary mb-1">
+          ${article.sectionName}
+        </span>
+
+        <h6 class="mb-1 fw-semibold">
+          ${article.webTitle}
+        </h6>
+
+        <p class="text-muted small mb-0">
+          ${article.fields?.trailText || ""}
+        </p>
+
+      </div>
+
+      <!-- Actions -->
+      <div class="ms-3 d-flex gap-2">
+
+        <a href="${article.webUrl}" 
+           target="_blank"
+           class="btn btn-sm btn-outline-secondary">
+          Open
+        </a>
+
+        <button class="btn btn-sm btn-outline-danger remove-bookmark"
+                data-url="${article.webUrl}">
+          Remove
+        </button>
+
+      </div>
+
+    </div>
+    `;
+
+      container.appendChild(card);
+    });
+  }
 }
 export default new DefaultView();
