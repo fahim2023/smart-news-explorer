@@ -1,7 +1,4 @@
-const API_KEY = `3ed52fe5-f7cc-4d73-b9df-39d8cbff51f8`;
-const BASE_URL = `https://content.guardianapis.com/search`;
-const SECTIONS_URL = `https://content.guardianapis.com/sections`;
-const PAGE_SIZE = 12;
+import { API_KEY, BASE_URL, SECTIONS_URL, PAGE_SIZE } from "./config.js";
 
 /*
 the dom event listener will trigger as soon as dom is loaded

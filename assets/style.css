@@ -22,3 +22,6 @@ main {
   border: 0.3px solid transparent !important;
   transition: border-color 0.3s ease;
 }
+.navbar-brand {
+  color: #36454f;
+}
