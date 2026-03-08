@@ -20,63 +20,10 @@ class DefaultView {
   }
   renderArticles(articles) {
     this.container.innerHTML = "";
-
     articles.forEach((article) => {
       const col = document.createElement("div");
       col.className = "col-lg-4 col-md-6";
-
-      col.innerHTML = `
-         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
-
-        <button class="bookmark-btn btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle"
-          data-url="${article.webUrl}">
-          <i class="bi bi-bookmark"></i>
-        </button>
-          <!-- Image -->
-          ${
-            article.fields?.thumbnail ?
-              `
-              <img src="${article.fields.thumbnail}"
-              class="card-img-top object-fit-cover"
-              style="height:200px;"
-              alt="">
-              `
-            : `<img src="${placeHolderImage}"
-              class="card-img-top object-fit-cover"
-              style="height:200px;"
-              alt="No image available">`
-          }
-              
-              <div class="card-body d-flex flex-column">
-              
-              <!-- Section Badge -->
-              <span class="badge bg-primary mb-2 align-self-start">
-              ${article.sectionName}
-              </span>
-              
-              
-              
-              <!-- Title -->
-              <h5 class="fw-semibold mb-2">
-              ${article.webTitle}
-              </h5>
-              
-              <!-- Summary -->
-              <p class="text-muted small mb-4">
-              ${article.fields?.trailText || ""}
-              </p>
-              
-              <!-- Button -->
-              <a href="${article.webUrl}"
-              target="_blank"
-              class="btn btn-outline-secondary mt-auto">
-              Read Full Article
-              </a>
-              
-              </div>
-              </div>
-              `;
-
+      col.innerHTML = this.createCard(article);
       this.container.appendChild(col);
     });
   }
@@ -93,59 +40,7 @@ class DefaultView {
     articles.forEach((article) => {
       const col = document.createElement("div");
       col.className = "col-lg-4 col-md-6";
-
-      col.innerHTML = `
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
-
-        <button class="bookmark-btn btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle"
-          data-url="${article.webUrl}">
-          <i class="bi bi-bookmark"></i>
-        </button>          
-          <!-- Image -->
-          ${
-            article.fields?.thumbnail ?
-              `
-              <img src="${article.fields.thumbnail}"
-              class="card-img-top object-fit-cover"
-              style="height:200px;"
-              alt="">
-              `
-            : `<img src="${placeHolderImage}"
-              class="card-img-top object-fit-cover"
-              style="height:200px;"
-              alt="No image available">`
-          }
-              
-              <div class="card-body d-flex flex-column">
-              
-              <!-- Section Badge -->
-              <span class="badge bg-primary mb-2 align-self-start">
-              ${article.sectionName}
-              </span>
-              
-              
-              
-              <!-- Title -->
-              <h5 class="fw-semibold mb-2">
-              ${article.webTitle}
-              </h5>
-              
-              <!-- Summary -->
-              <p class="text-muted small mb-4">
-              ${article.fields?.trailText || ""}
-              </p>
-              
-              <!-- Button -->
-              <a href="${article.webUrl}"
-              target="_blank"
-              class="btn btn-outline-secondary mt-auto">
-              Read Full Article
-              </a>
-              
-              </div>
-              </div>
-              `;
-
+      col.innerHTML = this.createCard(article);
       this.container.appendChild(col);
     });
   }
@@ -223,6 +118,30 @@ class DefaultView {
     this.container.innerHTML = `
       <div class="col-12">
         <div class="alert alert-danger text-center">${message}</div>
+      </div>
+    `;
+  }
+  createCard(articles) {
+    const thumbnail =
+      articles.fields?.thumbnail ?
+        `<img src="${articles.fields.thumbnail}" class="card-img-top object-fit-cover" style="height:200px;" alt="">`
+      : `<img src="${placeHolderImage}" class="card-img-top object-fit-cover" style="height:200px;" alt="No image available - placeholder image">`;
+
+    return `
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative">
+        <button class="bookmark-btn btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle"
+          data-url="${articles.webUrl}">
+          <i class="bi bi-bookmark"></i>
+        </button>
+        ${thumbnail}
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-primary mb-2 align-self-start">${articles.sectionName}</span>
+          <h5 class="fw-semibold mb-2">${articles.webTitle}</h5>
+          <p class="text-muted small mb-4">${articles.fields?.trailText || ""}</p>
+          <a href="${articles.webUrl}" target="_blank" class="btn btn-outline-secondary mt-auto">
+            Read Full Article
+          </a>
+        </div>
       </div>
     `;
   }
