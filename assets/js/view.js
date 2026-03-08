@@ -212,5 +212,12 @@ class DefaultView {
       container.appendChild(card);
     });
   }
+  showError(message) {
+    this.container.innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-danger text-center">${message}</div>
+      </div>
+    `;
+  }
 }
 export default new DefaultView();
