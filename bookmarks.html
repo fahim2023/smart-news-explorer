@@ -36,13 +36,25 @@
       </div>
     </header>
 
-    <main>
+    <main class="bg-light py-4">
       <section class="container mt-5">
         <div id="emptyState" class="text-center text-muted d-none"></div>
 
         <div id="bookmarksResults" class="row g-4"></div>
       </section>
     </main>
+    <footer class="py-4 mt-5 border-top">
+      <div class="container text-center small text-muted">
+        Powered by
+        <a
+          href="https://open-platform.theguardian.com/"
+          target="_blank"
+          class="text-decoration-none"
+        >
+          The Guardian Open Platform API
+        </a>
+      </div>
+    </footer>
     <script type="module" src="assets/js/bookmarkController.js"></script>
   </body>
 </html>
