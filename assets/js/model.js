@@ -31,7 +31,7 @@ export async function fetchLatestArticles(state) {
   params.append("page", state.page);
   params.append("page-size", state.pageSize);
   params.append("api-key", API_KEY);
-  params.append("show-fields", "trailText,thumbnail");
+  params.append("show-fields", "trailText,thumbnail,publication");
 
   try {
     const url = `${BASE_URL}?${params.toString()}`;
