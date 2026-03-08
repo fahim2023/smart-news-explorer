@@ -1,3 +1,4 @@
+const placeHolderImage = "assets/images/placeholder.webp";
 class DefaultView {
   constructor() {
     this.container = document.getElementById("results");
@@ -40,7 +41,10 @@ class DefaultView {
               style="height:200px;"
               alt="">
               `
-            : ""
+            : `<img src="${placeHolderImage}"
+              class="card-img-top object-fit-cover"
+              style="height:200px;"
+              alt="No image available">`
           }
               
               <div class="card-body d-flex flex-column">
@@ -106,7 +110,10 @@ class DefaultView {
               style="height:200px;"
               alt="">
               `
-            : ""
+            : `<img src="${placeHolderImage}"
+              class="card-img-top object-fit-cover"
+              style="height:200px;"
+              alt="No image available">`
           }
               
               <div class="card-body d-flex flex-column">
