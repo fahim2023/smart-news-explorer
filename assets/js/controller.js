@@ -29,7 +29,6 @@ async function loadArticles() {
     }
   } catch (error) {
     DefaultView.showError("Failed to load articles.");
-    console.error(error);
   }
 }
 document.addEventListener("DOMContentLoaded", async () => {

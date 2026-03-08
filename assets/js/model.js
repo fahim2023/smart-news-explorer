@@ -44,7 +44,6 @@ export async function fetchLatestArticles(state) {
 
     const data = await response.json();
     console.log("fetching", url);
-    // renderArticles();
     return {
       results: data.response.results,
       currentPage: data.response.currentPage,

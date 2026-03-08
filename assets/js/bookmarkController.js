@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const removeBtn = event.target.closest(".remove-bookmark");
     if (!removeBtn) return;
 
-    const url = event.target.dataset.url;
+    const url = event.target.closest(".remove-bookmark").dataset.url;
     let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
     bookmarks = bookmarks.filter((bookmark) => bookmark.webUrl !== url);
