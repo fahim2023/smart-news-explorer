@@ -145,6 +145,7 @@ class DefaultView {
 
   renderBookmarks(bookmarks) {
     const container = document.getElementById("bookmarksResults");
+    container.innerHTML = ``;
 
     const emptyState = (document.getElementById("emptyState").innerHTML =
       `<h4>No bookmarks yet</h4>
