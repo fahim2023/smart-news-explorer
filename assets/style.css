@@ -5,3 +5,20 @@
 .hero-section .card {
   border-radius: 15px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.card:hover {
+  border-color: var(--bs-primary) !important;
+}
+.card {
+  border: 0.3px solid transparent !important;
+  transition: border-color 0.3s ease;
+}
