@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const bookmarks = JSON.parse(localStorage.getItem("bookmarks") || "[]");
       console.log(bookmarks);
       const index = bookmarks.findIndex(
-        (bookmark) => bookmark.webUrl === article.url,
+        (bookmarkItem) => bookmarkItem.webUrl === article.url,
       );
       if (index === -1) {
         bookmarks.push(article);
