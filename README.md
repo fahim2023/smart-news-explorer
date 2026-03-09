@@ -55,21 +55,7 @@ https://fahim2023.github.io/smart-news-explorer/
 
 ## Project Structure
 
-\```
-smart-news-explorer/
-├── assets/
-│ ├── images/
-│ │ └── placeholder.webp
-│ ├── js/
-│ │ ├── controller.js
-│ │ ├── bookmarkController.js
-│ │ ├── model.js
-│ │ └── view.js
-│ └── style.css
-├── index.html
-├── bookmarks.html
-└── README.md
-\```
+![Smart News Explorer](assets/images/smart-news-explorer-structure.png)
 
 ## Architecture (MVC)
 
