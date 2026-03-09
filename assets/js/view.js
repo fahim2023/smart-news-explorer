@@ -22,7 +22,7 @@ class DefaultView {
   createCard(articles) {
     const thumbnail =
       articles.fields?.thumbnail ?
-        `<img src="${articles.fields.thumbnail}" class="card-img-top object-fit-cover" style="height:200px;" alt="">`
+        `<img src="${articles.fields.thumbnail}" class="card-img-top object-fit-cover" style="height:200px;" alt=${articles.webTitle}>`
       : `<img src="${placeHolderImage}" class="card-img-top object-fit-cover" style="height:200px;" alt="No image available - placeholder image">`;
 
     return `
