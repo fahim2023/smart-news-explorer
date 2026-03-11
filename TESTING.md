@@ -34,3 +34,43 @@ Testing focused on functionality, usability, responsiveness, and error handling.
 | As a user, I want the site to work on mobile so that I can use it on smaller screens. | Layout adapts correctly on mobile screen sizes. | Pass | Screenshot: mobile view |
 (assets/images/responsive-1.png)
 (assets/images/responsive-2.png)
+
+## Bugs and Fixes
+
+### Fixed Bugs
+
+1. **Issue:** Search with an empty input submitted a request anyway.  
+   **Cause:** No validation was in place before calling the API.  
+   **Fix:** Added a check to stop submission if the input is empty and display a user-friendly error message.  
+   **Status:** Fixed.
+
+2. **Issue:** Layout broke when labels were added to the date picker section.  
+   **Cause:** Existing layout classes did not account for extra label spacing.  
+   **Fix:** Adjusted container spacing and alignment styles.  
+   **Status:** Fixed.
+
+3. **Issue:** Deployed app behaved differently from local version.  
+   **Cause:** Path/deployment configuration issue on GitHub Pages.  
+   **Fix:** Updated deployment paths and retested live site.  
+   **Status:** Fixed.
+
+4. **Issue:** Bookmark icon disappeared when hovering over a card.
+   **Cause:** The card image scaling on hover overlapped the bookmark button in the stacking context.
+   **Fix:** Added `z-index: 10` to `.bookmark-btn` in `style.css` to keep the button on top.
+   **Status:** Fixed.
+
+5. **Issue:** Articles duplicated on initial page load.
+   **Cause:** `loadArticles()` was being called twice on `DOMContentLoaded`.
+   **Fix:** Removed the duplicate call, leaving a single `await loadArticles()` at the end of the initialisation block.
+   **Status:** Fixed.
+6. **Issue:** Layout broke when labels were added to the date picker section.  
+   **Cause:** Existing layout classes did not account for extra label spacing.  
+   **Fix:** Adjusted container spacing and alignment styles.  
+   **Status:** Fixed.
+
+### Unfixed Bugs
+
+7. **Issue:** Some article thumbnails are missing for certain API results.  
+   **Reason:** The external API does not always provide image data.  
+   **Impact:** Some cards show a fallback state instead of an image.  
+   **Status:** Unfixed but Providing a fallback placeholder image.

@@ -29,6 +29,7 @@ async function loadArticles() {
     }
   } catch (error) {
     DefaultView.showError("Failed to load articles.");
+    console.error(error);
   }
 }
 document.addEventListener("DOMContentLoaded", async () => {
@@ -50,7 +51,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   searchForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     state.query = searchInput.value.trim();
+    if (!state.query) {
+      DefaultView.showError("Please enter a search Term");
+      return;
+    }
     state.page = 1;
     await loadArticles();
   });
