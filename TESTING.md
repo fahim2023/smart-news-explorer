@@ -140,11 +140,14 @@ if (data.results.length === 0) {
 
 HTML was tested using the W3C Markup Validation Service.  
 Result: No major errors remaining after fixes.
+![no html errors in index file](assets/images/index-validation.png)
+![no html errors in index file](assets/images/bootmark-validation.png)
 
 ### CSS
 
 CSS was tested using the W3C Jigsaw Validator.  
 Result: No major errors remaining after fixes.
+![no css errors](assets/images/css%20validation.png)
 
 ### JavaScript
 
