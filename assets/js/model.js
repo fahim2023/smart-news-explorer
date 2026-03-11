@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL, SECTIONS_URL, PAGE_SIZE } from "./config.js";
+import { API_KEY, BASE_URL, SECTIONS_URL } from "./config.js";
 
 /*
 the dom event listener will trigger as soon as dom is loaded

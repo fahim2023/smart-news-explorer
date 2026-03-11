@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sectionSelect = document.getElementById("sectionSelect");
   const searchForm = document.getElementById("searchForm");
   const searchInput = document.getElementById("searchInput");
-  const searchBtn = document.getElementById("searchBtn");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
   const fromDateInput = document.getElementById("fromDate");
   const toDateInput = document.getElementById("toDate");
