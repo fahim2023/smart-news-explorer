@@ -18,8 +18,14 @@ async function loadArticles() {
     state.total = data.total;
     state.totalPages = data.pages;
     state.currentPage = data.currentPage;
+    if (data.results.length === 0) {
+      DefaultView.showError(
+        "No articles found. Please try a different search term.",
+      );
+      DefaultView.updateLoadMoreBtn(0, 0);
+      return;
+    }
     DefaultView.updateLoadMoreBtn(state.currentPage, state.totalPages);
-
     if (state.page === 1) {
       state.results = data.results;
       DefaultView.renderArticles(state.results);
