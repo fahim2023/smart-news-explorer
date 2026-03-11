@@ -47,9 +47,8 @@ class DefaultView {
     const { webUrl, sectionName, webTitle, webPublicationDate, fields } =
       article;
 
-    const thumbnail =
-      fields?.thumbnail ?
-        `<img src="${fields.thumbnail}"
+    const thumbnail = fields?.thumbnail
+      ? `<img src="${fields.thumbnail}"
             class="card-img-top object-fit-cover"
             style="height:200px;"
             alt="${webTitle}">`
@@ -133,7 +132,7 @@ class DefaultView {
             alt="${webTitle}">
 
           <div class="flex-grow-1 min-width-0">
-            <div class="d-flex justify-content-between align-items-center mb-1">
+            <div class="d-flex justify-content-between align-items-center mb-3">
               <span class="badge bg-primary">${sectionName}</span>
               <small class="text-muted">
                 <i class="bi bi-calendar3"></i> ${date}
@@ -143,7 +142,7 @@ class DefaultView {
             <p class="text-muted small mb-0">${fields?.trailText || ""}</p>
           </div>
 
-          <div class="d-flex flex-md-column gap-2 align-self-md-center">
+          <div class="d-flex flex-md-column gap-3 align-self-md-center ms-auto ms-md-0">
             <a href="${webUrl}" target="_blank" class="btn fs-5">
               <i class="bi bi-box-arrow-up-right"></i>
             </a>
