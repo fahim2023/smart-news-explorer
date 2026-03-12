@@ -1,18 +1,23 @@
+// Fallback image used when an article does not provide a thumbnail
 const PLACEHOLDER_IMAGE = "assets/images/placeholder.webp";
 
 class DefaultView {
+  // ─── CONSTRUCTOR ─────────────────────────────────────────────────────────────
+  // Cache DOM elements used across multiple methods
   constructor() {
     this.container = document.getElementById("results");
     this.sections = document.getElementById("sectionSelect");
   }
 
   // ─── SECTIONS ────────────────────────────────────────────────────────────────
-
+  // Populates the section dropdown with options fetched from the Guardian API
   populateSections(sections) {
+    // Remove any existing options except the default "All" option
     this.sections.querySelectorAll("option").forEach((option) => {
       if (option.value !== "all") option.remove();
     });
 
+    // Create and append a new option element for each section
     sections.forEach(({ id, webTitle }) => {
       const option = document.createElement("option");
       option.value = id;
@@ -22,16 +27,18 @@ class DefaultView {
   }
 
   // ─── ARTICLES ────────────────────────────────────────────────────────────────
-
+  // Clears the container and renders a fresh set of article cards
   renderArticles(articles) {
     this.container.innerHTML = "";
     this._appendCards(articles);
   }
 
+  // Appends additional article cards without clearing existing ones (used for Load More)
   appendArticles(articles) {
     this._appendCards(articles);
   }
 
+  // Shared helper that creates and appends card column elements to the container
   _appendCards(articles) {
     articles.forEach((article) => {
       const col = document.createElement("div");
@@ -42,11 +49,12 @@ class DefaultView {
   }
 
   // ─── CARD TEMPLATE ───────────────────────────────────────────────────────────
-
+  // Generates the HTML string for a single article card
   createCard(article) {
     const { webUrl, sectionName, webTitle, webPublicationDate, fields } =
       article;
 
+    // Use the article thumbnail if available, otherwise fall back to placeholder
     const thumbnail = fields?.thumbnail
       ? `<img src="${fields.thumbnail}"
             class="card-img-top object-fit-cover"
@@ -57,6 +65,7 @@ class DefaultView {
             style="height:200px;"
             alt="No image available">`;
 
+    // Format the publication date for display
     const date = new Date(webPublicationDate).toLocaleDateString("en-GB");
 
     return `
@@ -91,20 +100,22 @@ class DefaultView {
   }
 
   // ─── LOAD MORE ───────────────────────────────────────────────────────────────
-
+  // Hides the Load More button when the last page of results has been reached
   updateLoadMoreBtn(currentPage, totalPages) {
     const btn = document.getElementById("loadMoreBtn");
     btn.style.display = currentPage >= totalPages ? "none" : "";
   }
 
   // ─── BOOKMARKS ───────────────────────────────────────────────────────────────
-
+  // Renders the list of bookmarked articles on the bookmarks page
   renderBookmarks(bookmarks) {
     const container = document.getElementById("bookmarksResults");
     const emptyState = document.getElementById("emptyState");
 
+    // Clear previously rendered bookmark cards before re-rendering
     container.innerHTML = "";
 
+    // Show empty state message if there are no saved bookmarks
     if (bookmarks.length === 0) {
       emptyState.innerHTML = `
         <h4>No bookmarks yet</h4>
@@ -115,8 +126,10 @@ class DefaultView {
       return;
     }
 
+    // Hide empty state when bookmarks exist
     emptyState.classList.add("d-none");
 
+    // Create and append a card element for each bookmarked article
     bookmarks.forEach(
       ({ webUrl, sectionName, webTitle, webPublicationDate, fields }) => {
         const date = new Date(webPublicationDate).toLocaleDateString("en-GB");
@@ -160,7 +173,7 @@ class DefaultView {
   }
 
   // ─── ERROR ───────────────────────────────────────────────────────────────────
-
+  // Displays an error message inside the results container
   showError(message) {
     this.container.innerHTML = `
       <div class="col-12">
@@ -170,4 +183,5 @@ class DefaultView {
   }
 }
 
+// Export a single instance of DefaultView to be shared across the application
 export default new DefaultView();
