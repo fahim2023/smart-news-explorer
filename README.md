@@ -6,6 +6,12 @@ The application is built using **Vanilla JavaScript with an MVC architecture**, 
 
 ---
 
+## Wireframes
+
+Wireframes were created using Figma to plan the layout and structure of the application before development.
+
+![Wireframes](assets/images/wireframes.png)
+
 ## Live Demo
 
 https://fahim2023.github.io/smart-news-explorer/
@@ -50,8 +56,6 @@ https://fahim2023.github.io/smart-news-explorer/
 ### Storage
 
 - Browser LocalStorage
-
-## Project Structure
 
 ## Project Structure
 
