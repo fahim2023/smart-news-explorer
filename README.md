@@ -8,9 +8,38 @@ The application is built using **Vanilla JavaScript with an MVC architecture**, 
 
 ## Wireframes
 
-Wireframes were created using Figma to plan the layout and structure of the application before development.
+Wireframes were created in Figma before development began, to plan the layout, structure, and navigation of the application. The wireframes cover three views: desktop, mobile, and the bookmarks page.
 
-![Wireframes](assets/images/wireframes.webp)
+### Desktop — Search Page
+
+![Desktop Wireframe](assets/images/wireframes/wireframe-desktop.png)
+
+The desktop layout places the hero section and search bar front and centre. This was a deliberate UX decision — the primary purpose of the application is to search for news, so the search input is the first thing a user sees. The navigation bar provides quick access to the Bookmarks page from anywhere in the app. Article results are displayed in a three-column card grid below the search section, making good use of the available screen space.
+
+### Mobile — Search Page
+
+![Mobile Wireframe](assets/images/wireframes/wireframe-mobile.png)
+
+On mobile, the layout adapts to a single-column view. The filter controls stack vertically beneath the search input so they remain usable on smaller screens. Article cards display one per row. The navbar simplifies to a centred brand name with navigation buttons, keeping the interface clean and usable on touch devices.
+
+### Bookmarks Page
+
+![Bookmarks Wireframe](assets/images/wireframes/wireframe-bookmarks.png)
+
+The bookmarks page uses a horizontal list layout rather than a card grid, as this is more appropriate for a saved articles view where users want to scan titles quickly. Each bookmark displays the article thumbnail, section badge, title, trail text, date, a link to the full article, and a remove button. An empty state message is shown when no bookmarks have been saved.
+
+### Design Decisions
+
+- The hero section uses a blue gradient background to create a clear visual separation between the search/filter area and the article results below.
+- Bootstrap was chosen as the CSS framework to ensure consistent, responsive styling across all screen sizes without extensive custom CSS.
+- The bookmark button is positioned in the top-right corner of each article card so it is accessible without interfering with the article content.
+- A placeholder image is used when an article does not include a thumbnail, ensuring cards maintain a consistent layout regardless of the API response.
+
+### Design Mockup
+
+The following mockup shows the final design across all three views before development began, including colour scheme, typography and layout.
+
+![Design Mockup](assets/images/wireframes/design-mockup.png)
 
 ## Live Demo
 
