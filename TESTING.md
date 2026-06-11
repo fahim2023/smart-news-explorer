@@ -103,6 +103,46 @@ The following table documents manual testing of all application features.
 | Navigation     | Click Search News in navbar                       | Navigates to index.html                    | Pass   |                                                           |
 | Navigation     | Click Bookmarks in navbar                         | Navigates to bookmarks.html                | Pass   |                                                           |
 
+## Responsiveness Testing
+
+The application was tested across mobile, tablet and desktop screen sizes on Chrome, Safari and Firefox Developer Edition, using both local and live deployed versions.
+
+| Browser | Device  | Screen Size | Page              | Result | Evidence                                                                                 |
+| ------- | ------- | ----------- | ----------------- | ------ | ---------------------------------------------------------------------------------------- |
+| Chrome  | Mobile  | 390px       | Homepage (header) | Pass   | ![Chrome mobile header](assets/images/responsiveness/responsive-1.png)                   |
+| Chrome  | Mobile  | 390px       | Article cards     | Pass   | ![Chrome mobile cards](assets/images/responsiveness/responsive-2.png)                    |
+| Safari  | Desktop | 1440px      | Homepage          | Pass   | ![Safari desktop](assets/images/responsiveness/safari_home_desktop.png)                  |
+| Safari  | Tablet  | 762px       | Homepage          | Pass   | ![Safari tablet home](assets/images/responsiveness/safari_tablet_home.png)               |
+| Safari  | Tablet  | 762px       | Article cards     | Pass   | ![Safari tablet cards](assets/images/responsiveness/safari_tablet_cards.png)             |
+| Safari  | Tablet  | 762px       | Bookmarks         | Pass   | ![Safari tablet bookmarks](assets/images/responsiveness/safari_tablet_bookmark.png)      |
+| Safari  | Mobile  | 391px       | Homepage          | Pass   | ![Safari mobile home](assets/images/responsiveness/safari_mobile_home.png)               |
+| Safari  | Mobile  | 391px       | Bookmarks         | Pass   | ![Safari mobile bookmarks](assets/images/responsiveness/safari_mobile_bookmarks.png)     |
+| Firefox | Desktop | 1440px      | Homepage          | Pass   | ![Firefox desktop home](assets/images/responsiveness/mozilla_desktop_home.png)           |
+| Firefox | Desktop | 1440px      | Bookmarks         | Pass   | ![Firefox desktop bookmarks](assets/images/responsiveness/mozilla_desktop_bookmarks.png) |
+| Firefox | Tablet  | 764px       | Homepage          | Pass   | ![Firefox tablet home](assets/images/responsiveness/mozilla_tablet_home.png)             |
+| Firefox | Tablet  | 764px       | Article cards     | Pass   | ![Firefox tablet cards](assets/images/responsiveness/mozilla_tablet_cards.png)           |
+| Firefox | Tablet  | 764px       | Bookmarks         | Pass   | ![Firefox tablet bookmarks](assets/images/responsiveness/mozilla_tablet_bookmarks.png)   |
+| Firefox | Mobile  | 370px       | Homepage          | Pass   | ![Firefox mobile home](assets/images/responsiveness/mozilla_mobile_home.png)             |
+| Firefox | Mobile  | 370px       | Article cards     | Pass   | ![Firefox mobile cards](assets/images/responsiveness/mozilla_mobile_cards.png)           |
+| Firefox | Mobile  | 370px       | Bookmarks         | Pass   | ![Firefox mobile bookmarks](assets/images/responsiveness/mozilla_mobile_bookmarks.png)   |
+
+## Usability Testing
+
+The following checks were carried out to assess the usability of the application.
+
+| Test                                | Expected Outcome                                                              | Result | Evidence                                                       |
+| ----------------------------------- | ----------------------------------------------------------------------------- | ------ | -------------------------------------------------------------- |
+| Purpose is clear on first load      | User can immediately understand the app is a news search tool                 | Pass   | ![Homepage on load](assets/images/latest-news.png)             |
+| Search bar is prominently placed    | Search input is the first interactive element visible                         | Pass   | ![Homepage on load](assets/images/latest-news.png)             |
+| Error messages are clear            | User receives a readable message when search is empty or returns no results   | Pass   | ![No articles found](assets/images/no-articles-found.png)      |
+| Navigation is consistent            | Navbar appears on both pages with clear links                                 | Pass   | ![Navbar](assets/images/responsiveness/responsive-1.png)       |
+| Bookmark button is discoverable     | Button is visible on card in top right corner                                 | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)              |
+| Bookmarks page shows empty state    | Clear message and link back to homepage shown when no bookmarks saved         | Pass   | ![No bookmarks](assets/images/no_bookmarks.png)                |
+| External links open in new tab      | Clicking Read Full Article or link icon opens article without leaving the app | Pass   | ![External link](assets/images/external_link_sep_tab.png)      |
+| Filters are labelled clearly        | Section, From, To and Sort By labels make controls self-explanatory           | Pass   | ![Homepage on load](assets/images/latest-news.png)             |
+| Load More is hidden when not needed | Button disappears when all results have been loaded                           | Pass   | ![Load more hidden](assets/images/load_more_button_hidden.png) |
+| Fallback image maintains layout     | Cards without thumbnails display placeholder without breaking layout          | Pass   | ![Placeholder image](assets/images/placeholder_image.png)      |
+
 ## Bugs and Fixes
 
 ### Fixed Bugs
