@@ -74,6 +74,50 @@ https://fahim2023.github.io/smart-news-explorer/
 
 ---
 
+## UX Design
+
+Smart News Explorer was designed following the five planes of user experience design.
+
+### Strategy Plane
+
+The goal was to build a tool that solves a real problem — finding and saving news articles quickly without switching between multiple tabs or tools. The target audience is regular news readers who want a faster, more organised way to discover and save content.
+
+Business goal: provide a functional, well-designed news application that demonstrates front-end development skills.
+User goal: search, filter and bookmark Guardian news articles in one place.
+
+### Scope Plane
+
+Features were prioritised based on importance and feasibility. Core features included in the initial release:
+
+- Keyword search
+- Section, date and sort filters
+- Article cards with thumbnails
+- Bookmarking with localStorage
+- Load More pagination
+- Empty state and error messages
+
+Features deferred to future releases:
+
+- Backend to hide API key
+- Article collections
+- Dark mode
+- Search suggestions
+
+### Structure Plane
+
+The application uses a simple two-page structure — a search page and a bookmarks page. Navigation between them is always available via the navbar. The app does not rely on browser back/forward buttons for navigation.
+
+### Skeleton Plane
+
+Wireframes were created in Figma before development to plan the layout of each page across desktop, tablet and mobile. See the [Wireframes](#wireframes) section for full details.
+
+### Surface Plane
+
+- A blue gradient hero section creates a strong visual identity and separates the search area from the results
+- Bootstrap 5 provides a consistent, responsive visual language across all screen sizes
+- Cards use subtle hover effects and border highlights to indicate interactivity
+- Icons from Bootstrap Icons are used throughout for bookmark
+
 ## Features
 
 - Search news articles using The Guardian API
