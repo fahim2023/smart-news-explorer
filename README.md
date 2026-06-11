@@ -203,6 +203,23 @@ Query parameters used:
 
 Fahim Adam
 
+## Deployment
+
+The application is deployed using **GitHub Pages**.
+
+### Steps to deploy
+
+1. Push all changes to the `main` branch on GitHub.
+2. In the repository settings, navigate to **Pages**.
+3. Under **Source**, select the `main` branch and `/ (root)` as the folder.
+4. Click **Save**. GitHub Pages will build and publish the site.
+5. The live URL will appear in the Pages settings once the build is complete.
+
+### Notes
+
+- No build step is required — the application uses plain HTML, CSS and JavaScript with ES Modules loaded directly in the browser.
+- The deployed version at https://fahim2023.github.io/smart-news-explorer/ reflects the current state of the `main` branch.
+
 ## Acknowledgements
 
 ### MVC Architecture
