@@ -66,30 +66,30 @@ Testing focused on functionality, usability, responsiveness, and error handling.
 
 The following table documents manual testing of all application features.
 
-| Feature         | Test                                              | Expected Outcome                                              | Result | Evidence                                                       |
-| --------------- | ------------------------------------------------- | ------------------------------------------------------------- | ------ | -------------------------------------------------------------- |
-| Page load       | Open index.html                                   | Latest articles load automatically                            | Pass   | ![Latest news](assets/images/latest-news.png)                  |
-| Search          | Enter keyword and click Search                    | Matching articles displayed                                   | Pass   | ![Keyword search](assets/images/keyword-search.png)            |
-| Search          | Submit empty search field                         | Error message displayed                                       | Pass   |                                                                |
-| Search          | Enter keyword with no results                     | "No articles found" message displayed                         | Pass   | ![No articles found](assets/images/no-articles-found.png)      |
-| Section filter  | Select a section from dropdown                    | Articles filtered by selected section                         | Pass   |                                                                |
-| Date filter     | Enter a from date                                 | Articles filtered from that date                              | Pass   |                                                                |
-| Date filter     | Enter a to date                                   | Articles filtered up to that date                             | Pass   |                                                                |
-| Sort            | Select "Oldest First"                             | Articles reorder oldest first                                 | Pass   |                                                                |
-| Sort            | Select "Relevance"                                | Articles reorder by relevance                                 | Pass   |                                                                |
-| Load More       | Click Load More button                            | Next page of articles appended                                | Pass   |                                                                |
-| Load More       | Reach last page of results                        | Load More button hidden                                       | Pass   | ![Load more hidden](assets/images/load_more_button_hidden.png) |
-| Bookmark        | Click bookmark icon on article card               | Article saved to localStorage                                 | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)              |
-| Bookmark        | Click bookmark icon on already bookmarked article | Article removed from localStorage                             | Pass   |                                                                |
-| Bookmarks page  | Open bookmarks.html with saved bookmarks          | Saved articles displayed                                      | Pass   | ![Bookmark articles](assets/images/bookmark-articles.png)      |
-| Bookmarks page  | Open bookmarks.html with no bookmarks             | Empty state message displayed                                 | Pass   | ![No bookmarks](assets/images/no_bookmarks.png)                |
-| Bookmarks page  | Click remove button on bookmark                   | Article removed from list and localStorage                    | Pass   |                                                                |
-| Bookmarks page  | Click external link icon                          | Article opens in new tab                                      | Pass   | ![External link](assets/images/external_link_sep_tab.png)      |
-| Fallback image  | Article with no thumbnail                         | Placeholder image displayed                                   | Pass   | ![Placeholder image](assets/images/placeholder_image.png)      |
-| Navigation      | Click Search News in navbar                       | Navigates to index.html                                       | Pass   |                                                                |
-| Navigation      | Click Bookmarks in navbar                         | Navigates to bookmarks.html                                   | Pass   |                                                                |
-| 404 page        | Navigate to a non-existent URL                    | Custom 404 page displayed with automatic redirect to homepage | Pass   | ![404 desktop](assets/images/404_test_desktop.png)             |
-| 404 page mobile | Navigate to a non-existent URL on mobile          | Custom 404 page displays correctly on mobile                  | Pass   | ![404 mobile](assets/images/404_test_mobile.png)               |
+| Feature         | Test                                              | Expected Outcome                                              | Result | Evidence                                                           |
+| --------------- | ------------------------------------------------- | ------------------------------------------------------------- | ------ | ------------------------------------------------------------------ | ---- | --- |
+| Page load       | Open index.html                                   | Latest articles load automatically                            | Pass   | ![Latest news](assets/images/latest-news.png)                      |
+| Search          | Enter keyword and click Search                    | Matching articles displayed                                   | Pass   | ![Keyword search](assets/images/keyword-search.png)                |
+| Search          | Submit empty search field                         | Error message displayed                                       | Pass   |                                                                    |
+| Search          | Enter keyword with no results                     | "No articles found" message displayed                         | Pass   | ![No articles found](assets/images/no-articles-found.png)          |
+| Section filter  | Select a section from dropdown                    | Articles filtered by selected section                         | Pass   | ![select from section](assets/images/drop_down_select_section.png) | Pass |     |
+| Date filter     | Enter a from date                                 | Articles filtered from that date                              | Pass   | ![Latest news](assets/images/from_to_oldest.png)Pass               |      |
+| Date filter     | Enter a to date                                   | Articles filtered up to that date                             | Pass   | ![Latest news](assets/images/from_to_oldest.png)Pass               |      |
+| Sort            | Select "Oldest First"                             | Articles reorder oldest first                                 | Pass   | ![Latest news](assets/images/from_to_oldest.png)Pass               |      |
+| Sort            | Select "Relevance"                                | Articles reorder by relevance                                 | Pass   | ![Latest news](assets/images/most_relevant.png)Pass                |      |
+| Load More       | Click Load More button                            | Next page of articles appended                                | Pass   | ![Latest news](assets/images/load_more_before_after.png)Pass       |      |
+| Load More       | Reach last page of results                        | Load More button hidden                                       | Pass   | ![Load more hidden](assets/images/load_more_button_hidden.png)     |
+| Bookmark        | Click bookmark icon on article card               | Article saved to localStorage                                 | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)                  |
+| Bookmark        | Click bookmark icon on already bookmarked article | Article removed from localStorage                             | Pass   |                                                                    |
+| Bookmarks page  | Open bookmarks.html with saved bookmarks          | Saved articles displayed                                      | Pass   | ![Bookmark articles](assets/images/bookmark-articles.png)          |
+| Bookmarks page  | Open bookmarks.html with no bookmarks             | Empty state message displayed                                 | Pass   | ![No bookmarks](assets/images/no_bookmarks.png)                    |
+| Bookmarks page  | Click remove button on bookmark                   | Article removed from list and localStorage                    | Pass   |                                                                    |
+| Bookmarks page  | Click external link icon                          | Article opens in new tab                                      | Pass   | ![External link](assets/images/external_link_sep_tab.png)          |
+| Fallback image  | Article with no thumbnail                         | Placeholder image displayed                                   | Pass   | ![Placeholder image](assets/images/placeholder_image.png)          |
+| Navigation      | Click Search News in navbar                       | Navigates to index.html                                       | Pass   |                                                                    |
+| Navigation      | Click Bookmarks in navbar                         | Navigates to bookmarks.html                                   | Pass   |                                                                    |
+| 404 page        | Navigate to a non-existent URL                    | Custom 404 page displayed with automatic redirect to homepage | Pass   | ![404 desktop](assets/images/404_test_desktop.png)                 |
+| 404 page mobile | Navigate to a non-existent URL on mobile          | Custom 404 page displays correctly on mobile                  | Pass   | ![404 mobile](assets/images/404_test_mobile.png)                   |
 
 ---
 
@@ -99,8 +99,8 @@ The application was tested across mobile, tablet and desktop screen sizes on Chr
 
 | Browser | Device  | Screen Size | Page              | Result | Evidence                                                                                 |
 | ------- | ------- | ----------- | ----------------- | ------ | ---------------------------------------------------------------------------------------- |
-| Chrome  | Mobile  | 390px       | Homepage (header) | Pass   | ![Chrome mobile header](assets/images/responsive-1.png)                                  |
-| Chrome  | Mobile  | 390px       | Article cards     | Pass   | ![Chrome mobile cards](assets/images/responsive-2.png)                                   |
+| Chrome  | Mobile  | 390px       | Homepage (header) | Pass   | ![Chrome mobile header](assets/images/responsiveness/responsive-1.png)                   |
+| Chrome  | Mobile  | 390px       | Article cards     | Pass   | ![Chrome mobile cards](assets/images/responsiveness/responsive-2.png)                    |
 | Safari  | Desktop | 1440px      | Homepage          | Pass   | ![Safari desktop](assets/images/responsiveness/safari_home_desktop.png)                  |
 | Safari  | Tablet  | 762px       | Homepage          | Pass   | ![Safari tablet home](assets/images/responsiveness/safari_tablet_home.png)               |
 | Safari  | Tablet  | 762px       | Article cards     | Pass   | ![Safari tablet cards](assets/images/responsiveness/safari_tablet_cards.png)             |
