@@ -6,6 +6,21 @@ The application is built using **Vanilla JavaScript with an MVC architecture**, 
 
 ---
 
+## Purpose and Value
+
+Smart News Explorer was built to address a common problem: keeping up with the news across multiple topics is time-consuming, and there is no easy way to save articles for later reading without leaving the browser or using a third-party tool.
+
+This application solves that by providing a single interface where users can:
+
+- Search The Guardian's full article database by keyword
+- Narrow results by section, date range, and sort order
+- Bookmark articles directly from the search results
+- Return to their saved articles at any time via the Bookmarks page
+
+The target audience is anyone who reads news regularly and wants a faster, more organised way to discover and save articles — whether that is a student researching a topic, a professional keeping up with their industry, or a general reader who wants to save stories to read later.
+
+The application provides immediate value to new users without any setup — there is no account required, bookmarks are saved automatically to the browser, and the purpose of the app is clear from the moment the page loads.
+
 ## Wireframes
 
 Wireframes were created in Figma before development began, to plan the layout, structure, and navigation of the application. The wireframes cover three views: desktop, mobile, and the bookmarks page.
