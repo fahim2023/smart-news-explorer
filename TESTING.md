@@ -1,3 +1,34 @@
+## Testing Methodology
+
+### Manual Testing
+
+Manual testing involves a human tester interacting with the application directly to verify that it behaves as expected. This approach is best suited for testing user experience, visual layout, responsiveness, and exploratory testing where human judgement is needed. Manual testing was the primary method used throughout this project.
+
+A common manual testing approach is Behaviour-Driven Development (BDD), which structures tests around user stories using a Given–When–Then format:
+
+- **Given** a specific context
+- **When** a particular action is performed
+- **Then** a specific, observable outcome should occur
+
+This makes tests clear, repeatable, and directly tied to user needs.
+
+### Automated Testing
+
+Automated testing uses tools or scripts to run checks without human interaction. It is best suited for repetitive checks, regression testing, and validating code quality at scale. Common tools include Jest for JavaScript unit tests and Selenium for browser automation.
+
+In this project, automated testing was applied through code validation tools:
+
+- **W3C HTML Validator** — automatically checks HTML against defined standards
+- **W3C CSS Validator** — automatically checks CSS for errors and warnings
+- **JSHint** — automatically lints JavaScript files and reports issues
+
+### When to Use Each
+
+| Approach  | Best Used For                                                      |
+| --------- | ------------------------------------------------------------------ |
+| Manual    | UX, layout, responsiveness, user flows, exploratory testing        |
+| Automated | Code validation, regression testing, unit testing, repeated checks |
+
 ## Testing Strategy
 
 Testing for this project was carried out throughout development and again after deployment to ensure the live version matched the development version.
