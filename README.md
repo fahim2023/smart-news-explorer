@@ -6,6 +6,25 @@ The application is built using **Vanilla JavaScript with an MVC architecture**, 
 
 ---
 
+## Table of Contents
+
+- [Purpose and Value](#purpose-and-value)
+- [UX Design](#ux-design)
+- [Wireframes](#wireframes)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Architecture (MVC)](#architecture-mvc)
+- [API](#api)
+- [Deployment](#deployment)
+- [Testing](#testing)
+- [Future Improvements](#future-improvements)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
+
+---
+
 ## Purpose and Value
 
 Smart News Explorer was built to address a common problem: keeping up with the news across multiple topics is time-consuming, and there is no easy way to save articles for later reading without leaving the browser or using a third-party tool.
@@ -32,6 +51,56 @@ The application provides immediate value to new users without any setup — ther
 | 5   | As a user, I want to view all bookmarked articles so that I can easily access saved content.                     | Separate bookmarks page loads saved articles from localStorage, remove button on each                   | Implemented | ![Bookmark articles](assets/images/bookmark-articles.png)                                                     |
 | 6   | As a user, I want to load additional articles so that I can browse more news results.                            | Load More button appends next page of results, hidden when no more results exist                        | Implemented | ![Load more hidden](assets/images/load_more_button_hidden.png)                                                |
 | 7   | As a user, I want to see error messages so that I understand when something goes wrong.                          | API failures and empty results display user-friendly messages, app does not crash                       | Implemented | ![No articles found](assets/images/no-articles-found.png)                                                     |
+
+---
+
+## UX Design
+
+Smart News Explorer was designed following the five planes of user experience design.
+
+### Strategy Plane
+
+The goal was to build a tool that solves a real problem — finding and saving news articles quickly without switching between multiple tabs or tools. The target audience is regular news readers who want a faster, more organised way to discover and save content.
+
+Business goal: provide a functional, well-designed news application that demonstrates front-end development skills.
+User goal: search, filter and bookmark Guardian news articles in one place.
+
+### Scope Plane
+
+Features were prioritised based on importance and feasibility. Core features included in the initial release:
+
+- Keyword search
+- Section, date and sort filters
+- Article cards with thumbnails
+- Bookmarking with localStorage
+- Load More pagination
+- Empty state and error messages
+- Custom 404 page with automatic redirect to homepage
+
+Features deferred to future releases:
+
+- Backend to hide API key
+- Article collections
+- Dark mode
+- Search suggestions
+
+### Structure Plane
+
+The application uses a simple two-page structure — a search page and a bookmarks page. Navigation between them is always available via the navbar. The app does not rely on browser back/forward buttons for navigation.
+
+### Skeleton Plane
+
+Wireframes were created in Figma before development to plan the layout of each page across desktop, tablet and mobile. See the [Wireframes](#wireframes) section for full details.
+
+### Surface Plane
+
+- A blue gradient hero section creates a strong visual identity and separates the search area from the results
+- Bootstrap 5 provides a consistent, responsive visual language across all screen sizes
+- Cards use subtle hover effects and border highlights to indicate interactivity
+- Icons from Bootstrap Icons are used throughout for bookmark, date, trash and external link actions
+- A placeholder image ensures consistent card layout when article thumbnails are unavailable
+
+---
 
 ## Wireframes
 
@@ -68,72 +137,27 @@ The following mockup shows the final design across all three views before develo
 
 ![Design Mockup](assets/images/wireframes/design-mockup.png)
 
+---
+
 ## Live Demo
 
 https://fahim2023.github.io/smart-news-explorer/
 
 ---
 
-## UX Design
-
-Smart News Explorer was designed following the five planes of user experience design.
-
-### Strategy Plane
-
-The goal was to build a tool that solves a real problem — finding and saving news articles quickly without switching between multiple tabs or tools. The target audience is regular news readers who want a faster, more organised way to discover and save content.
-
-Business goal: provide a functional, well-designed news application that demonstrates front-end development skills.
-User goal: search, filter and bookmark Guardian news articles in one place.
-
-### Scope Plane
-
-Features were prioritised based on importance and feasibility. Core features included in the initial release:
-
-- Keyword search
-- Section, date and sort filters
-- Article cards with thumbnails
-- Bookmarking with localStorage
-- Load More pagination
-- Empty state and error messages
-- Custom 404 page with automatic redirect to homepage
-
-  Features deferred to future releases:
-
-- Backend to hide API key
-- Article collections
-- Dark mode
-- Search suggestions
-
-### Structure Plane
-
-The application uses a simple two-page structure — a search page and a bookmarks page. Navigation between them is always available via the navbar. The app does not rely on browser back/forward buttons for navigation.
-
-### Skeleton Plane
-
-Wireframes were created in Figma before development to plan the layout of each page across desktop, tablet and mobile. See the [Wireframes](#wireframes) section for full details.
-
-### Surface Plane
-
-- A blue gradient hero section creates a strong visual identity and separates the search area from the results
-- Bootstrap 5 provides a consistent, responsive visual language across all screen sizes
-- Cards use subtle hover effects and border highlights to indicate interactivity
-- Icons from Bootstrap Icons are used throughout for bookmark
-
 ## Features
 
 - Search news articles using The Guardian API
 - Filter by section (politics, sport, world news, etc.)
 - Filter by date range
-- Sort by:
-  - Newest
-  - Oldest
-  - Relevance
+- Sort by Newest, Oldest or Relevance
 - Pagination with **Load More**
 - Bookmark articles for later reading
 - View bookmarked articles on a separate page
 - LocalStorage used for bookmark persistence
 - Fallback image if article thumbnail is missing
 - Fully responsive layout using Bootstrap
+- Custom 404 page with automatic redirect to homepage
 
 ---
 
@@ -158,9 +182,34 @@ Wireframes were created in Figma before development to plan the layout of each p
 
 - Browser LocalStorage
 
+---
+
 ## Project Structure
 
-![Smart News Explorer](assets/images/smart-news-explorer-structure.png)
+```
+smart-news-explorer/
+├── assets/
+│   ├── images/
+│   │   ├── wireframes/
+│   │   │   ├── wireframe-desktop.png
+│   │   │   ├── wireframe-mobile.png
+│   │   │   ├── wireframe-bookmarks.png
+│   │   │   └── design-mockup.png
+│   │   └── placeholder.webp
+│   ├── js/
+│   │   ├── controller.js
+│   │   ├── bookmarkController.js
+│   │   ├── model.js
+│   │   └── view.js
+│   └── style.css
+├── index.html
+├── bookmarks.html
+├── 404.html
+├── README.md
+└── TESTING.md
+```
+
+---
 
 ## Architecture (MVC)
 
@@ -178,8 +227,6 @@ Responsibilities:
 - Build query parameters
 - Return structured article data
 
----
-
 ### View
 
 Responsible for rendering UI components.
@@ -192,8 +239,6 @@ Responsibilities:
 - Render bookmarked articles
 - Update pagination buttons
 - Populate sections dropdown
-
----
 
 ### Controller
 
@@ -208,8 +253,6 @@ Responsibilities:
 - Handle section filtering
 - Handle sorting
 - Handle pagination
-
----
 
 ### Bookmark Controller
 
@@ -227,38 +270,28 @@ Responsibilities:
 
 ## API
 
-This project uses:
-
-**The Guardian Open Platform API**
+This project uses **The Guardian Open Platform API**.
 
 https://open-platform.theguardian.com/
 
 Example endpoint:
 
+```
 https://content.guardianapis.com/search
+```
 
 Query parameters used:
 
-- `q`
-- `section`
-- `from-date`
-- `to-date`
-- `order-by`
-- `page`
-- `page-size`
-- `show-fields`
+- `q` — keyword search
+- `section` — filter by section
+- `from-date` — filter by start date
+- `to-date` — filter by end date
+- `order-by` — sort order
+- `page` — pagination page number
+- `page-size` — number of results per page
+- `show-fields` — request additional fields (thumbnail, trailText, publication)
 
-## Future Improvements
-
-- Backend to hide API key
-- Article collections (multiple bookmark groups)
-- Dark mode
-- Article preview modal
-- Search suggestions
-
-## Author
-
-Fahim Adam
+---
 
 ## Deployment
 
@@ -276,6 +309,30 @@ The application is deployed using **GitHub Pages**.
 
 - No build step is required — the application uses plain HTML, CSS and JavaScript with ES Modules loaded directly in the browser.
 - The deployed version at https://fahim2023.github.io/smart-news-explorer/ reflects the current state of the `main` branch.
+
+---
+
+## Testing
+
+Testing documentation is provided in [TESTING.md](TESTING.md).
+
+---
+
+## Future Improvements
+
+- Backend to hide API key
+- Article collections (multiple bookmark groups)
+- Dark mode
+- Article preview modal
+- Search suggestions
+
+---
+
+## Author
+
+Fahim Adam
+
+---
 
 ## Acknowledgements
 
@@ -298,6 +355,8 @@ The MVC architecture pattern used in this project was inspired by [Jonas Schmedt
 - [W3C Markup Validation Service](https://validator.w3.org/) — Used to validate HTML.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) — Used to validate CSS.
 - [JSHint](https://jshint.com/) — Used to lint JavaScript files.
+
+---
 
 ## License
 
