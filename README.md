@@ -21,6 +21,18 @@ The target audience is anyone who reads news regularly and wants a faster, more 
 
 The application provides immediate value to new users without any setup — there is no account required, bookmarks are saved automatically to the browser, and the purpose of the app is clear from the moment the page loads.
 
+### User Stories
+
+| #   | User Story                                                                                                       | Acceptance Criteria                                                                                     | Status      | Evidence                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| 1   | As a user, I want to view the latest news articles so that I can stay updated with current events.               | Articles load on page open, each card shows headline, thumbnail, summary, date and link to full article | Implemented | ![Latest news](assets/images/latest-news.png)                                                                 |
+| 2   | As a user, I want to search for news articles by keyword so that I can find articles related to specific topics. | Search input available, results update on submit, empty results show a message                          | Implemented | ![Keyword search](assets/images/keyword-search.png) ![No articles found](assets/images/no-articles-found.png) |
+| 3   | As a user, I want to open a full article so that I can read the complete story.                                  | Each card contains a link that opens the full article on The Guardian in a new tab                      | Implemented | ![External link](assets/images/external_link_sep_tab.png)                                                     |
+| 4   | As a user, I want to save articles for later reading so that I can access them later.                            | Bookmark button on each card, saves to localStorage, persists after refresh, no duplicates              | Implemented | ![Bookmark icon](assets/images/bookmark_icon.png)                                                             |
+| 5   | As a user, I want to view all bookmarked articles so that I can easily access saved content.                     | Separate bookmarks page loads saved articles from localStorage, remove button on each                   | Implemented | ![Bookmark articles](assets/images/bookmark-articles.png)                                                     |
+| 6   | As a user, I want to load additional articles so that I can browse more news results.                            | Load More button appends next page of results, hidden when no more results exist                        | Implemented | ![Load more hidden](assets/images/load_more_button_hidden.png)                                                |
+| 7   | As a user, I want to see error messages so that I understand when something goes wrong.                          | API failures and empty results display user-friendly messages, app does not crash                       | Implemented | ![No articles found](assets/images/no-articles-found.png)                                                     |
+
 ## Wireframes
 
 Wireframes were created in Figma before development began, to plan the layout, structure, and navigation of the application. The wireframes cover three views: desktop, mobile, and the bookmarks page.
