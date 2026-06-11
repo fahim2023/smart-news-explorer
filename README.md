@@ -95,8 +95,9 @@ Features were prioritised based on importance and feasibility. Core features inc
 - Bookmarking with localStorage
 - Load More pagination
 - Empty state and error messages
+- Custom 404 page with automatic redirect to homepage
 
-Features deferred to future releases:
+  Features deferred to future releases:
 
 - Backend to hide API key
 - Article collections
