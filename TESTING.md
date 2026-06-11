@@ -64,15 +64,68 @@ Testing focused on functionality, usability, responsiveness, and error handling.
 
 ## User Story Testing
 
-| #   | User Story                                                                                                       | Acceptance Criteria                                                                                     | Status | Evidence                                                                                                      |
-| --- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
-| 1   | As a user, I want to view the latest news articles so that I can stay updated with current events.               | Articles load on page open, each card shows headline, thumbnail, summary, date and link to full article | Pass   | ![Latest news](assets/images/latest-news.png)                                                                 |
-| 2   | As a user, I want to search for news articles by keyword so that I can find articles related to specific topics. | Search input available, results update on submit, empty results show a message                          | Pass   | ![Keyword search](assets/images/keyword-search.png) ![No articles found](assets/images/no-articles-found.png) |
-| 3   | As a user, I want to open a full article so that I can read the complete story.                                  | Each card contains a link that opens the full article on The Guardian in a new tab                      | Pass   | ![External link](assets/images/external_link_sep_tab.png)                                                     |
-| 4   | As a user, I want to save articles for later reading so that I can access them later.                            | Bookmark button on each card, saves to localStorage, persists after refresh, no duplicates              | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)                                                             |
-| 5   | As a user, I want to view all bookmarked articles so that I can easily access saved content.                     | Separate bookmarks page loads saved articles from localStorage, remove button on each                   | Pass   | ![Bookmark articles](assets/images/bookmark-articles.png)                                                     |
-| 6   | As a user, I want to load additional articles so that I can browse more news results.                            | Load More button appends next page of results, hidden when no more results exist                        | Pass   | ![Load more hidden](assets/images/load_more_button_hidden.png)                                                |
-| 7   | As a user, I want to see error messages so that I understand when something goes wrong.                          | API failures and empty results display user-friendly messages, app does not crash                       | Pass   | ![No articles found](assets/images/no-articles-found.png)                                                     |
+| #   | User Story                                                                                                       | Acceptance Criteria                                                                                     | Status | Evidence                  |
+| --- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------ | ------------------------- |
+| 1   | As a user, I want to view the latest news articles so that I can stay updated with current events.               | Articles load on page open, each card shows headline, thumbnail, summary, date and link to full article | Pass   | [Screenshot](#evidence-1) |
+| 2   | As a user, I want to search for news articles by keyword so that I can find articles related to specific topics. | Search input available, results update on submit, empty results show a message                          | Pass   | [Screenshot](#evidence-2) |
+| 3   | As a user, I want to open a full article so that I can read the complete story.                                  | Each card contains a link that opens the full article on The Guardian in a new tab                      | Pass   | [Screenshot](#evidence-3) |
+| 4   | As a user, I want to save articles for later reading so that I can access them later.                            | Bookmark button on each card, saves to localStorage, persists after refresh, no duplicates              | Pass   | [Screenshot](#evidence-4) |
+| 5   | As a user, I want to view all bookmarked articles so that I can easily access saved content.                     | Separate bookmarks page loads saved articles from localStorage, remove button on each                   | Pass   | [Screenshot](#evidence-5) |
+| 6   | As a user, I want to load additional articles so that I can browse more news results.                            | Load More button appends next page of results, hidden when no more results exist                        | Pass   | [Screenshot](#evidence-6) |
+| 7   | As a user, I want to see error messages so that I understand when something goes wrong.                          | API failures and empty results display user-friendly messages, app does not crash                       | Pass   | [Screenshot](#evidence-7) |
+
+---
+
+### Evidence
+
+<a name="evidence-1"></a>
+**1. Latest news loads on page open**
+
+![Latest news](assets/images/latest-news.png)
+
+---
+
+<a name="evidence-2"></a>
+**2. Keyword search and empty state**
+
+![Keyword search](assets/images/keyword-search.png)
+
+![No articles found](assets/images/no-articles-found.png)
+
+---
+
+<a name="evidence-3"></a>
+**3. External link opens in new tab**
+
+![External link](assets/images/external_link_sep_tab.png)
+
+---
+
+<a name="evidence-4"></a>
+**4. Bookmark icon on each card**
+
+![Bookmark icon](assets/images/bookmark_icon.png)
+
+---
+
+<a name="evidence-5"></a>
+**5. Bookmarks page**
+
+![Bookmark articles](assets/images/bookmark-articles.png)
+
+---
+
+<a name="evidence-6"></a>
+**6. Load More button hidden when exhausted**
+
+![Load more hidden](assets/images/load_more_button_hidden.png)
+
+---
+
+<a name="evidence-7"></a>
+**7. No articles found message**
+
+![No articles found](assets/images/no-articles-found.png)
 
 ## Functionality Testing
 
