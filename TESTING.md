@@ -62,6 +62,18 @@ Testing focused on functionality, usability, responsiveness, and error handling.
 
 ---
 
+## User Story Testing
+
+| #   | User Story                                                                                                       | Acceptance Criteria                                                                                     | Status | Evidence                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
+| 1   | As a user, I want to view the latest news articles so that I can stay updated with current events.               | Articles load on page open, each card shows headline, thumbnail, summary, date and link to full article | Pass   | ![Latest news](assets/images/latest-news.png)                                                                 |
+| 2   | As a user, I want to search for news articles by keyword so that I can find articles related to specific topics. | Search input available, results update on submit, empty results show a message                          | Pass   | ![Keyword search](assets/images/keyword-search.png) ![No articles found](assets/images/no-articles-found.png) |
+| 3   | As a user, I want to open a full article so that I can read the complete story.                                  | Each card contains a link that opens the full article on The Guardian in a new tab                      | Pass   | ![External link](assets/images/external_link_sep_tab.png)                                                     |
+| 4   | As a user, I want to save articles for later reading so that I can access them later.                            | Bookmark button on each card, saves to localStorage, persists after refresh, no duplicates              | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)                                                             |
+| 5   | As a user, I want to view all bookmarked articles so that I can easily access saved content.                     | Separate bookmarks page loads saved articles from localStorage, remove button on each                   | Pass   | ![Bookmark articles](assets/images/bookmark-articles.png)                                                     |
+| 6   | As a user, I want to load additional articles so that I can browse more news results.                            | Load More button appends next page of results, hidden when no more results exist                        | Pass   | ![Load more hidden](assets/images/load_more_button_hidden.png)                                                |
+| 7   | As a user, I want to see error messages so that I understand when something goes wrong.                          | API failures and empty results display user-friendly messages, app does not crash                       | Pass   | ![No articles found](assets/images/no-articles-found.png)                                                     |
+
 ## Functionality Testing
 
 The following table documents manual testing of all application features.
@@ -127,7 +139,7 @@ The following checks were carried out to assess the usability of the application
 | Purpose is clear on first load      | User can immediately understand the app is a news search tool                 | Pass   | ![Homepage on load](assets/images/latest-news.png)             |
 | Search bar is prominently placed    | Search input is the first interactive element visible                         | Pass   | ![Homepage on load](assets/images/latest-news.png)             |
 | Error messages are clear            | User receives a readable message when search is empty or returns no results   | Pass   | ![No articles found](assets/images/no-articles-found.png)      |
-| Navigation is consistent            | Navbar appears on both pages with clear links                                 | Pass   | ![Navbar](assets/images/responsive-1.png)                      |
+| Navigation is consistent            | Navbar appears on both pages with clear links                                 | Pass   | ![Navbar](assets/images/responsiveness/responsive-1.png)       |
 | Bookmark button is discoverable     | Button is visible on card in top right corner                                 | Pass   | ![Bookmark icon](assets/images/bookmark_icon.png)              |
 | Bookmarks page shows empty state    | Clear message and link back to homepage shown when no bookmarks saved         | Pass   | ![No bookmarks](assets/images/no_bookmarks.png)                |
 | External links open in new tab      | Clicking Read Full Article or link icon opens article without leaving the app | Pass   | ![External link](assets/images/external_link_sep_tab.png)      |
