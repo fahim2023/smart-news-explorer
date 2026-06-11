@@ -205,9 +205,25 @@ Fahim Adam
 
 ## Acknowledgements
 
-The MVC architecture pattern used in this project was inspired by
-[Jonas Schmedtmann's](https://github.com/jonasschmedtmann) Forkify project,
-part of his [JavaScript course](https://www.udemy.com/course/the-complete-javascript-course/) on Udemy.
+### MVC Architecture
+
+The MVC architecture pattern used in this project was inspired by [Jonas Schmedtmann's](https://github.com/jonasschmedtmann) Forkify project, part of his [JavaScript course](https://www.udemy.com/course/the-complete-javascript-course/) on Udemy. The overall structure of separating concerns into model, view and controller files was adapted from this pattern. All code in this project was written independently.
+
+### Libraries and Frameworks
+
+- [Bootstrap 5](https://getbootstrap.com/) — CSS framework used for responsive layout, grid system, buttons, badges, cards and utility classes.
+- [Bootstrap Icons](https://icons.getbootstrap.com/) — Icon library used for the bookmark, calendar, trash and external link icons throughout the application.
+
+### API
+
+- [The Guardian Open Platform](https://open-platform.theguardian.com/) — News API used to fetch all article data displayed in the application.
+
+### Tools
+
+- [Figma](https://figma.com/) — Used to create wireframes and design mockups before development.
+- [W3C Markup Validation Service](https://validator.w3.org/) — Used to validate HTML.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) — Used to validate CSS.
+- [JSHint](https://jshint.com/) — Used to lint JavaScript files.
 
 ## License
 
