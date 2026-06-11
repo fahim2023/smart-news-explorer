@@ -76,6 +76,33 @@ Testing focused on functionality, usability, responsiveness, and error handling.
 ![responsive layout - header section](assets/images/responsive-1.png)
 ![responsive layout card](assets/images/responsive-2.png)
 
+## Functionality Testing
+
+The following table documents manual testing of all application features.
+
+| Feature        | Test                                              | Expected Outcome                           | Result | Evidence                                                  |
+| -------------- | ------------------------------------------------- | ------------------------------------------ | ------ | --------------------------------------------------------- |
+| Page load      | Open index.html                                   | Latest articles load automatically         | Pass   | ![Latest news](assets/images/latest-news.png)             |
+| Search         | Enter keyword and click Search                    | Matching articles displayed                | Pass   | ![Keyword search](assets/images/keyword-search.png)       |
+| Search         | Submit empty search field                         | Error message displayed                    | Pass   |                                                           |
+| Search         | Enter keyword with no results                     | "No articles found" message displayed      | Pass   | ![No articles found](assets/images/no-articles-found.png) |
+| Section filter | Select a section from dropdown                    | Articles filtered by selected section      | Pass   |                                                           |
+| Date filter    | Enter a from date                                 | Articles filtered from that date           | Pass   |                                                           |
+| Date filter    | Enter a to date                                   | Articles filtered up to that date          | Pass   |                                                           |
+| Sort           | Select "Oldest First"                             | Articles reorder oldest first              | Pass   |                                                           |
+| Sort           | Select "Relevance"                                | Articles reorder by relevance              | Pass   |                                                           |
+| Load More      | Click Load More button                            | Next page of articles appended             | Pass   |                                                           |
+| Load More      | Reach last page of results                        | Load More button hidden                    | Pass   |                                                           |
+| Bookmark       | Click bookmark icon on article card               | Article saved to localStorage              | Pass   |                                                           |
+| Bookmark       | Click bookmark icon on already bookmarked article | Article removed from localStorage          | Pass   |                                                           |
+| Bookmarks page | Open bookmarks.html with saved bookmarks          | Saved articles displayed                   | Pass   | ![Bookmark articles](assets/images/bookmark-articles.png) |
+| Bookmarks page | Open bookmarks.html with no bookmarks             | Empty state message displayed              | Pass   |                                                           |
+| Bookmarks page | Click remove button on bookmark                   | Article removed from list and localStorage | Pass   |                                                           |
+| Bookmarks page | Click external link icon                          | Article opens in new tab                   | Pass   |                                                           |
+| Fallback image | Article with no thumbnail                         | Placeholder image displayed                | Pass   |                                                           |
+| Navigation     | Click Search News in navbar                       | Navigates to index.html                    | Pass   |                                                           |
+| Navigation     | Click Bookmarks in navbar                         | Navigates to bookmarks.html                | Pass   |                                                           |
+
 ## Bugs and Fixes
 
 ### Fixed Bugs
